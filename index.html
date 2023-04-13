@@ -18,36 +18,52 @@
       border: 1px solid black;
       background-color: rgb(255, 255, 255);
       margin: 40px auto 0;
-      padding-top: 40px;
-      display: flex; /* 수평 가운데 정렬 */
-      justify-content: center; /* 수평 가운데 정렬 */
+      padding-top: 10px;
     }
-    .text {
+    /* 스타일 태그 추가 */
+    audio::-webkit-media-controls {
+      display:none !important;
+    }
+    audio::-webkit-media-controls-enclosure {
+      display:none !important;
+    }
+    audio::-webkit-media-controls-panel {
+      display:none !important;
+    }
+    audio::-webkit-media-controls-play-button {
+      display:none !important;
+    }
+    .audio-container {
+      width: 50%;
+      margin: 0 auto;
       text-align: center;
-      align-self: center; /* 수직 가운데 정렬 */
+    }
+    audio {
+      width: 100%;
+    }
+    .text-wrapper {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <div class="box">
-    <div class="text">
-      <h1 style="color: black; font-size: 2em; text-align: center;">번호를 다 조합하셨나요?
-      정답을 입력해주세요.</h1>
-      <form>  
-        <input type="text" id="myInput" placeholder="정답을 입력하세요." style="width: 400px; height: 60px; font-size: 30px;">
-        <button onclick="checkAnswer()">제출</button>
-      </form>
-      <script>
-        function checkAnswer() {
-          var input = document.getElementById("myInput").value;
-          if (input === "416") {
-      window.open("https://happy030day.github.io/dkseho4/");
-          } else {
-            alert("정답이 아닙니다.");
-          }
-        }
-      </script>       
-    </div>    
+    <div class="text-wrapper">
+      <h1 style="color: rgb(0, 0, 0); font-size: 2em;">아쉽게도 배가 침몰했습니다.</h1>
+      <h2 class="text">여러분들은 학생회가 준비한 퀴즈나, 자료들을 꼭 한번씩 봐주길 바라요!</h2>
+      <div class="audio-container">
+        <!-- mp3 파일 경로 수정 -->
+        <audio controls>
+          <source src="풍덩.mp3" type="audio/mp3">
+        </audio>
+        <audio autoplay controls style="display:none;">
+          <source src="풍덩.mp3" type="audio/mp3">
+        </audio>
+      </div>
+    </div>
   </div>
 </body>
 </html>
